@@ -12,8 +12,8 @@ firebase.initializeApp(config);
 
 var name = " ";
 var role = " ";
-var date  = $("#startdate-input").val().trim();
-var rate = $("#monthlyrate-input").val().trim();
+var date;
+var rate;
 
 var database = firebase.database();
 
@@ -35,5 +35,14 @@ $("#submit").on("click", function(event) {
     rate: rate,
     dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
+
+    $(document).ready(function(){
+        $(".add-row").click(function(){
+            var monthsWorked = ;
+            var totalBilled = ;
+            var markup = "<tr><td>" + name + "</td><td>" + role + "</td><td>" + date + "</td><td>" + monthsWorked + "</td><td>" + rate + "</td><td>" + totalBilled + "</td></tr>";
+            $("table tbody").append(markup);
+        });
+    });    
 
 });
