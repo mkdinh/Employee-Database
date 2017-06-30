@@ -37,7 +37,8 @@ $("#submit").on("click", function(event) {
     });
 
     $(document).ready(function(){
-        $(".add-row").click(function(){
+        $("#submit").click(function(){
+            event.preventDefault();
             var monthsWorked = ;
             var totalBilled = ;
             var markup = "<tr><td>" + name + "</td><td>" + role + "</td><td>" + date + "</td><td>" + monthsWorked + "</td><td>" + rate + "</td><td>" + totalBilled + "</td></tr>";
